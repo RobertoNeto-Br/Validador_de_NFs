@@ -1,89 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Comparar NF-e com CT-e</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 1rem;
-    background: #f5f8fa;
-    color: #333;
-  }
-  textarea {
-    width: 100%;
-    min-height: 100px;
-    margin-bottom: 0.5rem;
-    font-family: monospace;
-    resize: vertical;
-  }
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0.3rem 0.5rem 0.5rem 0;
-    border-radius: 4px;
-    cursor: pointer;
-    user-select: none;
-  }
-  button:hover {
-    background-color: #0056b3;
-  }
-  #listaNFs {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1rem;
-    max-height: 150px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    background: #e9ecef;
-    border-radius: 4px;
-  }
-  #listaNFs li {
-    padding: 0.3rem 0.5rem;
-    border-bottom: 1px solid #ccc;
-  }
-  #resultado {
-    white-space: pre-wrap;
-    background: #fff3cd;
-    border: 1px solid #ffeeba;
-    padding: 1rem;
-    border-radius: 4px;
-    min-height: 4rem;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  @media (max-width: 600px) {
-    body {
-      margin: 0.5rem;
-      font-size: 14px;
-    }
-    textarea {
-      min-height: 80px;
-    }
-  }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comparar NF-e com CT-e</title>
+    <style>
+        /* Estilos gerais da página para layout, fontes e cores */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 1rem;
+            background: #f5f8fa;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            margin-bottom: 0.5rem;
+            font-family: monospace;
+            resize: vertical; /* Permite redimensionar verticalmente */
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0.3rem 0.5rem 0.5rem 0;
+            border-radius: 4px;
+            cursor: pointer;
+            user-select: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #listaNFs {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+        #listaNFs li {
+            padding: 0.3rem 0.5rem;
+            border-bottom: 1px solid #ccc;
+        }
+        #resultado {
+            white-space: pre-wrap;
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 4px;
+            min-height: 4rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        @media (max-width: 600px) {
+            body {
+                margin: 0.5rem;
+                font-size: 14px;
+            }
+            textarea {
+                min-height: 80px;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>Comparar NF-e com CT-e</h1>
 
-<label for="textareaCTE">XML do CT-e:</label><br/>
-<textarea id="textareaCTE" placeholder="Cole aqui o XML do CT-e"></textarea><br/>
+    <!-- Título principal da página -->
+    <h1>Comparar NF-e com CT-e</h1>
 
-<label for="textareaNF">XML da NF-e:</label><br/>
-<textarea id="textareaNF" placeholder="Cole aqui o XML da NF-e"></textarea><br/>
-<button id="adicionarNF">Adicionar NF-e</button>
+    <!-- Área para inserir o XML do CT-e -->
+    <label for="textareaCTE">XML do CT-e:</label><br/>
+    <textarea id="textareaCTE" placeholder="Cole aqui o XML do CT-e"></textarea><br/>
 
-<h3>Notas Fiscais Eletrônicas adicionadas:</h3>
-<ul id="listaNFs" aria-live="polite" aria-label="Lista de NF-e adicionadas"></ul>
+    <!-- Área para inserir o XML da NF-e -->
+    <label for="textareaNF">XML da NF-e:</label><br/>
+    <textarea id="textareaNF" placeholder="Cole aqui o XML da NF-e"></textarea><br/>
 
-<button id="compararBtn">Comparar NF-e com CT-e</button>
+    <!-- Botão para adicionar a NF-e à lista -->
+    <button id="adicionarNF">Adicionar NF-e</button>
 
-<h3>Resultado da comparação:</h3>
-<div id="resultado" role="region" aria-live="polite"></div>
+    <!-- Lista exibindo as NF-e adicionadas -->
+    <h3>Notas Fiscais Eletrônicas adicionadas:</h3>
+    <ul id="listaNFs" aria-live="polite" aria-label="Lista de NF-e adicionadas"></ul>
 
-<script src="app.js"></script>
+    <!-- Botão para iniciar a comparação entre NF-e e CT-e -->
+    <button id="compararBtn">Comparar NF-e com CT-e</button>
+
+    <!-- Área para exibir o resultado da comparação -->
+    <h3>Resultado da comparação:</h3>
+    <div id="resultado" role="region" aria-live="polite"></div>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="app.js"></script>
+
 </body>
 </html>
